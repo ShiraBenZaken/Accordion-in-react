@@ -21,7 +21,7 @@ const Search = () => {
         /*
         there is short option to write function to call axios (make request) in useEfect() 
         instead [ const search = async ()=> ] and calling after with [ search(); ] 
-        write (async () => { await axios.get('api') })()
+        write (async () => { await axios.get('api') })() .
         */
         const search = async () => {
             const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
