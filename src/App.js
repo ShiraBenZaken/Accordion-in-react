@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Translate from './components/Translate';
 
-
 const items = [{
     title: 'What is React',
     content: 'React is a FrontEnd javascript framework'
