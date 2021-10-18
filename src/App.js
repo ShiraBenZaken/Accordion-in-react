@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import Translate from './components/Translate';
+import Accordion from './components/Accordion'
+import Dropdown from './components/Dropdown';
+import Search from './components/Search';
+import Route from './components/Route';
+import Header from './components/Header';
 
 const items = [{
     title: 'What is React',
@@ -29,9 +34,27 @@ const options = [
 
 
 const App = () => {
+    const [selected, setSelected] = useState(options[0]);
+
     return (
         <div>
-            <Translate/>
+            <Header/>
+            <Route path='/'>
+                <Accordion items={items} />
+            </Route>
+            <Route path='/list'>
+                <Search />
+            </Route>
+            <Route path='/dropdown'>
+                <Dropdown
+                    options={options}
+                    selected={selected}
+                    onSelectedChange={setSelected}
+                />
+            </Route>
+            <Route path='/translate'>
+                <Translate />
+            </Route>
         </div>
     );
 }
